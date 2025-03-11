@@ -44,9 +44,7 @@ public class BatchConfiguration {
             setLineTokenizer(new DelimitedLineTokenizer() {{
                 setNames(new String[] { "firstName", "lastName","email","age" });
             }});
-            setFieldSetMapper(new BeanWrapperFieldSetMapper<Person>() {{
-                setTargetType(Person.class);
-            }});
+            setFieldSetMapper(new RawStringFieldSetMapper());
         }});
         return reader;
     }
